@@ -28,10 +28,7 @@ export default function App() {
   );
 
   const [isAiMode, setIsAiMode] = useState(false);
-  const [geminiApiKey, setGeminiApiKey] = useState(() => {
-    try { return process.env.GEMINI_API_KEY || localStorage.getItem('geminiApiKey') || ''; }
-    catch { return localStorage.getItem('geminiApiKey') || ''; }
-  });
+  const geminiApiKey = process.env.GEMINI_API_KEY || import.meta.env.VITE_GEMINI_API_KEY || '';
   const [geminiModel, setGeminiModel] = useState(() => localStorage.getItem('geminiModel') || 'gemini-1.5-flash');
 
   type ChatSession = {
@@ -142,10 +139,6 @@ export default function App() {
   useEffect(() => {
     localStorage.setItem('workspaceCards', JSON.stringify(workspaceCards));
   }, [workspaceCards]);
-
-  useEffect(() => {
-    localStorage.setItem('geminiApiKey', geminiApiKey);
-  }, [geminiApiKey]);
 
   useEffect(() => {
     localStorage.setItem('geminiModel', geminiModel);
@@ -291,8 +284,7 @@ export default function App() {
 
   const handleAiSubmit = async (query: string, currentAttachments: string[]) => {
     if (!geminiApiKey) {
-      alert('Configure a API Key do Gemini nas configurações.');
-      setShowSettingsPanel(true);
+      alert('A API Key do Gemini não está configurada no ambiente (Vercel).');
       return;
     }
     setIsAiLoading(true);
@@ -513,7 +505,6 @@ export default function App() {
       workspaceCards,
       userSubscriptions,
       lastSearchEngineId,
-      geminiApiKey,
       geminiModel,
       chatSessions
     };
@@ -540,7 +531,6 @@ export default function App() {
         if (data.workspaceCards) setWorkspaceCards(data.workspaceCards);
         if (data.userSubscriptions) setUserSubscriptions(data.userSubscriptions);
         if (data.lastSearchEngineId) setLastSearchEngineId(data.lastSearchEngineId);
-        if (data.geminiApiKey !== undefined) setGeminiApiKey(data.geminiApiKey);
         if (data.geminiModel !== undefined) setGeminiModel(data.geminiModel);
         if (data.chatSessions) setChatSessions(data.chatSessions);
         if (data.chatMessages && !data.chatSessions) {
@@ -1218,7 +1208,7 @@ export default function App() {
             </div>
 
             <AnimatePresence>
-              {(showSettingsPanel || (activeEngineId === 'youtube' && !youtubeApiKey) || (isAiMode && !geminiApiKey)) && (
+              {(showSettingsPanel || (activeEngineId === 'youtube' && !youtubeApiKey)) && (
                 <motion.div
                   initial={{ opacity: 0, y: 10 }}
                   animate={{ opacity: 1, y: 0 }}
