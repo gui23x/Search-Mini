@@ -1,3 +1,5 @@
+import React from 'react';
+
 export interface VideoResult {
     id: string;
     title: string;
