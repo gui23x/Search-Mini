@@ -33,6 +33,7 @@ By participating in this project, you are expected to uphold our commitment to a
 ## Reporting Bugs
 
 If you find a bug or have a suggestion, please open an issue in the GitHub repository. When reporting a bug, try to include:
+
 - A clear description of the issue.
 - Steps to reproduce the behavior.
 - Any relevant logs or error messages.
@@ -43,4 +44,5 @@ If you find a bug or have a suggestion, please open an issue in the GitHub repos
 By contributing to Search-Mini, you agree that your contributions will be licensed under the project's [LICENSE](LICENSE).
 
 ---
-*Happy coding!*
+
+_Happy coding!_

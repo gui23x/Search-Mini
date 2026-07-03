@@ -1,10 +1,12 @@
 <div align="center">
   <!-- Placeholder for the project cover image -->
 <img alt="GHBanner" src="https://i.pinimg.com/originals/9f/85/14/9f85149150ad9e9be7642971bde762b6.png" />
-  
+
+  <br>
+
   # YouTube Search Hub (Search Mini)
   
-  *A modern, minimal search engine hub with integrated YouTube video discovery, seamless playback, multi-engine web search, and a powerful Gemini AI assistant.*
+  *A modern, minimal search engine hub with integrated YouTube video discovery, seamless playback, and multi-engine web search.*
 </div>
 
 ## 🌟 Overview
@@ -13,16 +15,9 @@ Search Mini is a highly customizable, centralized search dashboard built with Re
 
 Beyond traditional search, it acts as a **YouTube client**—letting you discover videos, subscribe to channels locally, and watch content in a distraction-free modal. Additionally, it features a **Workspace mode** to manage your favorite bookmarks directly from the search bar.
 
-Recently, it evolved to include a **Smart AI Assistant** powered by Google's Gemini, supporting rich markdown formatting, multi-modal file uploads, and session history management.
-
 ## ✨ Features
 
 *   **Multi-Engine Search**: Switch between Google, DuckDuckGo, Brave, Bing, and GitHub instantly.
-*   **🤖 Integrated Gemini AI**:
-    *   **Conversational Chat**: Toggle AI mode for smart, prompt-based interactions.
-    *   **File Analysis**: Upload multi-modal attachments (Images, PDFs, Spreadsheets, Code files) to provide context.
-    *   **Rich Formatting**: Renders Markdown natively with a 1-click "Copy" button for code blocks.
-    *   **Session Management**: Auto-saves your chat history, allowing you to resume or delete previous conversations via the grid modal.
 *   **Integrated YouTube Experience**:
     *   Search for videos and channels directly.
     *   Watch videos seamlessly in a custom popup modal.
@@ -61,7 +56,6 @@ Recently, it evolved to include a **Smart AI Assistant** powered by Google's Gem
    Create a `.env` or `.env.local` file in the root directory and add your API keys:
    ```env
    VITE_YOUTUBE_API_KEY=your_youtube_api_key_here
-   GEMINI_API_KEY=your_gemini_api_key_here # If applicable for AI features
    ```
    *Note: You can also add your YouTube API Key directly via the Settings panel inside the app's UI.*
 
@@ -75,11 +69,6 @@ Recently, it evolved to include a **Smart AI Assistant** powered by Google's Gem
    npm run build
    ```
 
-## 🔮 Upcoming Improvements (Roadmap)
-
-*   **Web Context Integration**: Allow Gemini AI to read Workspace bookmarks, fetch external URLs natively, and summarize YouTube videos.
-*   **Voice Search & Prompts**: Add microphone support for hands-free interactions.
-*   **More LLM Providers**: Expand support to OpenAI, Anthropic, and Local models (like Ollama) directly in settings.
 
 ## 🛠️ Tech Stack
 
